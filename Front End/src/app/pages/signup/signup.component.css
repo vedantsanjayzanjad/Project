@@ -1,0 +1,15 @@
+.full-width {
+    width: 70%;
+}
+
+.text-center {
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+
+
+mat-card
+{
+  box-shadow: 10px 10px 10px 10px rgba(24, 4, 1, 0.479);
+}

@@ -1,0 +1,68 @@
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/admin" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Home</span>
+
+            </a>
+            <a mat-list-item routerLink="/holidays" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Holidays</span>
+
+            </a>
+            <a mat-list-item routerLink="/task" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Task</span>
+
+            </a>
+            <a mat-list-item routerLink="/userTask" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Assign Task</span>
+
+            </a>
+
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.open()">
+            <!-- <mat-icon>menu</mat-icon>&nbsp; -->
+            <span>Menu</span>
+
+
+        </button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar>
+    <mat-card class="mat">
+        <form>
+            <mat-card-title style="text-align: center;">Tasks</mat-card-title>
+            <div class="titleContainer">
+                <div class="idTitle">ID</div>
+                <div class="task-sdate">TaskStartDate</div>
+                <div class="days">Days</div>
+                <div class="task-edate">TaskEndDate</div>
+                <div class="task-description">TaskDescription</div>
+            </div>
+            <div class="infoContainer" *ngFor="let task of task">
+                <div class="idTitle">{{task.taskId}}</div>
+                <div class="task-sdate">{{task.startDate}}</div>
+                <div class="days">{{task.days}}</div>
+                <div class="task-edate">{{task.endDate}}</div>
+                <div class="task-description">{{task.taskDescription}}</div>
+                <div class="button">
+                    <button class="deleteBtn" (click)="delete(task.taskId)" style="margin: left 2px;">Delete</button>
+                    <button class="editBtn" routerLink="/updateTask/{{task.taskId}}" routerLinkActive="active"
+                        style="margin-left: 10px;">Edit</button>
+                </div>
+            </div>
+            <a><button routerLink="/addTask" routerLinkActive="active" class="addBtn">Add Task</button></a>
+            <br>
+        </form>
+    </mat-card>
+</mat-sidenav-container>

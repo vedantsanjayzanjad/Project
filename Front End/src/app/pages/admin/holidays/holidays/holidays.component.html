@@ -1,0 +1,72 @@
+<!-- <app-navbar></app-navbar> -->
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/admin" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Home</span>
+
+            </a>
+            <a mat-list-item routerLink="/holidays" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Holidays</span>
+
+            </a>
+            <a mat-list-item routerLink="/task" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Task</span>
+
+            </a>
+            <a mat-list-item routerLink="/userTask" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Assign Task</span>
+
+            </a>
+
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.open()">
+            <!-- <mat-icon>menu</mat-icon>&nbsp; -->
+            <span>Menu</span>
+
+
+        </button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar>
+
+    <div class="container">
+
+        <mat-card class="mat">
+            <form>
+                <mat-card-title style="text-align: center;">Holidays</mat-card-title>
+                <div class="titleContainer">
+                    <div class="idTitle">ID</div>
+                    <div class="name">HolidayName</div>
+                    <div class="date">HolidayDate</div>
+                </div>
+                <div class="infoContainer" *ngFor="let holiday of holiday">
+                    <div class="id">{{holiday.holidayId}}</div>
+                    <div class="HolidayName">{{holiday.holidayName}}</div>
+                    <div class="HolidayDate">{{holiday.holidayDate}}</div>
+                    <div class="button">
+                        <button (click)="delete(holiday.holidayId)" class="deleteBtn"
+                            style="margin-left:20px;">Delete</button>
+                        <button class="editBtn" routerLink="/updateHoliday/{{holiday.holidayId}}"
+                            routerLinkActive="active" style="margin-left: 10px;">Edit</button>
+                    </div>
+                </div>
+                <a><button [routerLink]="'/addHolidays'" routerLinkActive="active" class="addBtn">Add
+                        Holiday</button></a>
+                <br>
+            </form>
+        </mat-card>
+    </div>
+
+</mat-sidenav-container>

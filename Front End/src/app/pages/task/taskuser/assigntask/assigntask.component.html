@@ -1,0 +1,94 @@
+<!-- <app-navbar></app-navbar> -->
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/admin" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Home</span>
+
+            </a>
+            <a mat-list-item routerLink="/holidays" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Holidays</span>
+
+            </a>
+            <a mat-list-item routerLink="/task" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Task</span>
+
+            </a>
+            <a mat-list-item routerLink="/userTask" routerLinkActive="active">
+                <!-- <mat-icon>person_add</mat-icon> -->
+                <span>Assign Task</span>
+
+            </a>
+
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.open()">
+            <!-- <mat-icon>menu</mat-icon>&nbsp; -->
+            <span>Menu</span>
+
+
+        </button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar>
+
+    <mat-card clas="mat" style="  width: 24%;
+height: 50%;
+margin: 30px auto 20px auto;">
+        <form style="text-align: center" (ngSubmit)="assignTask()">
+            <mat-form-field class="full-width" appearance="outline" style="margin-top: 10px">
+                <mat-label>StartDate</mat-label>
+                <input required [(ngModel)]="task.startDate" name="startDate" matInput [matDatepicker]="picker"
+                    placeholder="startDate*" />
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Days</mat-label>
+                <input required [(ngModel)]="task.days" name="days" type="days" matInput placeholder="days*" />
+            </mat-form-field>
+            <!-- <mat-form-field class="full-width" appearance="outline">
+                <mat-label>EndDate</mat-label>
+                <input required [(ngModel)]="task.endDate" name="endDate" matInput [matDatepicker]="picker"
+                    placeholder="endDate*" [disabled]="true" />
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+            <br />
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>TaskName</mat-label>
+                <input required [(ngModel)]="task.taskDescription" name="taskDescription" type="taskDescription" ty
+                    matInput placeholder="taskDescription*" />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>UserName</mat-label>
+                <!-- <input required [(ngModel)]="task.user.username" name="task.user.username" type="task.user.username" ty
+                matInput placeholder="task.user.username*" /> -->
+                <select matNativeControl [(ngModel)]="selectedUser" name="selectedUser">
+                    <option *ngFor="let user of user" [ngValue]="user">
+                        {{user.username}}</option>
+                </select>
+            </mat-form-field>
+
+            <div class="container text-center" style="padding-bottom: 20px">
+                <button type="submit" mat-raised-button color="primary">Assign</button>
+            </div>
+        </form>
+    </mat-card>
+    <!-- <select matNativeControl [(ngModel)]="selectedUser">
+    <option *ngFor="let user of user" [ngValue]="user">
+        {{user.username}}</option>
+</select> -->
+</mat-sidenav-container>

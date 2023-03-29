@@ -1,0 +1,94 @@
+
+.mat
+{
+    width: 45%;
+    margin: auto auto auto 30%;
+    margin-top: 2%;
+    box-shadow: 10px 10px 10px 10px rgba(24, 4, 1, 0.479);
+
+}
+
+*{
+    font-family:Arial, Helvetica, sans-serif;
+  }
+   
+  .titleContainer {
+   display:flex;  
+    height:32px;
+    line-height:32px;
+    font-size:12px;
+    font-weight:bold;
+    background:#444444;
+    color:#ffffff; 
+     padding-left:10px;  
+  } 
+  
+  .infoContainer {
+    display:flex;
+    height:32px;
+    line-height:32px;
+    border-bottom:1px solid #dddddd;
+    padding-left:10px;
+    background:#ffffff;
+  }
+
+  .name
+  {
+    margin-left:23%;
+  }
+
+  .date{
+    margin-left:15%;
+  }
+  
+  .id {
+    flex:1;
+    /* background:yellow; */
+  }
+  
+  .HolidayName {
+    flex:1;
+    /* background:maroon; */
+  }
+  
+  .HolidayDate {
+    flex:1;
+    /* background:lightgreen; */
+  }
+  
+  .button {
+    flex:1;
+    /* background:pink; */
+  }
+  
+  .addBtn {
+    background:green;
+    border:none;
+    height:32px;
+    margin-top:20px;
+    color:#ffffff;
+    font-weight:bold;
+    width:120px;
+  }
+  
+  .editBtn {
+    background:blue;
+    border:none;
+    color:#ffffff;
+    font-weight:bold;
+    height:22px;
+     width:60px; 
+  }
+  
+  .deleteBtn {
+    background:rgb(255, 0, 0);
+    border:none;
+    color:#ffffff;
+    font-weight:bold;
+    height:22px;
+     width:60px; 
+  }
+  .spacer {
+    flex: 1 1 auto;
+    color: aqua;
+}

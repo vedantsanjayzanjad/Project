@@ -1,0 +1,51 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <mat-card style="
+            width: 35%;
+            margin: 20px auto 20px auto;
+            
+          ">
+          <div class="container text-center">
+            <img src="../../../assets/new.png" alt="loading..." width="300" height="200" style="padding-top: 20px" />
+          </div>
+          <h1 class="text-center">Registered Here!!!!</h1>
+
+          <form style="text-align: center" (ngSubmit)="login()">
+            <mat-form-field class="full-width" appearance="outline" style="margin-top: 10px">
+
+              <mat-label>UserName</mat-label>
+              <input required [(ngModel)]="user.username" name="username" type="username" matInput
+                placeholder="UserName*" />
+              <mat-icon>
+                person
+              </mat-icon>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="full-width" appearance="outline">
+
+              <mat-label>Password</mat-label>
+              <input required [(ngModel)]="user.password" name="password" type="password" matInput
+                placeholder="Password*" />
+              <mat-icon>
+                key
+              </mat-icon>
+            </mat-form-field>
+            <br />
+            <div class="container text-center" style="padding-bottom: 20px">
+              <button type="submit" mat-raised-button color="primary">Login</button>
+              <p style="margin-top: 10px;">OR</p>
+              <a href="signup" style="margin-left: 10px;margin-top: 10px;">
+                Click here to register</a>
+            </div>
+          </form>
+        </mat-card>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <button type="reset" mat-raised-button color="warn" style="margin-left: 4px">
+    Register Here
+  </button> -->

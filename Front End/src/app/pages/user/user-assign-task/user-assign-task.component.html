@@ -1,0 +1,50 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/normal" routerLinkActive="active">
+                <span>Home</span>
+
+            </a>
+            <a mat-list-item routerLink="/userAssignedTask" routerLinkActive="active">
+                <span>Assigned Task</span>
+            </a>
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+
+
+    <mat-toolbar color="primary" class="mat-elevation-z3">
+        <button mat-icon-button (click)="sidenav.open()">Menu
+        </button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar>
+
+
+    <mat-card class="mat">
+        <form>
+            <mat-card-title style="text-align: center;">Tasks</mat-card-title>
+            <div class="titleContainer">
+
+                <div class="task-username">userName</div>
+                <div class="task-description">TaskDescription</div>
+                <div class="task-sdate">TaskStartDate</div>
+                <div class="days">Days</div>
+                <div class="task-edate">TaskEndDate</div>
+                <div class="task-role">Role</div>
+            </div>
+            <div class="infoContainer" *ngFor="let task of task">
+                <div class="task-username">{{task.user.username}}</div>
+                <div class="task-description">{{task.taskDescription}}</div>
+                <div class="task-sdate">{{task.startDate}}</div>
+                <div class="days">{{task.days}}</div>
+                <div class="task-edate">{{task.endDate}}</div>
+                <div class="task-role">{{task.user.lastName}}</div>
+            </div>
+            <br>
+        </form>
+    </mat-card>
+</mat-sidenav-container>

@@ -1,0 +1,74 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/admin" routerLinkActive="active">
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+
+            </a>
+            <a mat-list-item routerLink="/holidays" routerLinkActive="active">
+                <mat-icon>person_add</mat-icon>
+                <span>Holidays</span>
+
+            </a>
+            <a mat-list-item routerLink="/task" routerLinkActive="active">
+                <mat-icon>person_add</mat-icon>
+                <span>Task</span>
+
+            </a>
+            <a mat-list-item routerLink="/userTask" routerLinkActive="active">
+                <mat-icon>person_add</mat-icon>
+                <span>Assign Task</span>
+            </a>
+
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+
+
+    <mat-toolbar color="primary" class="mat-elevation-z3">
+        <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>&nbsp;
+        </button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar>
+    <p
+        style="font-family:georgia,garamond,serif;font-size:26px;font-style:italic;text-align: center;color: blue;margin-top: 2%;">
+        Welcome {{admin.user.username}}!!! You can view task details here.</p>
+
+    <div class="text-center">
+        <img src="assets/Home.png" style="object-fit: contain;margin-left:22%;" />
+    </div>
+
+    <!-- <router-outlet></router-outlet> -->
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <app-navbar></app-navbar>
+    <br>
+    <a href="adminDetails">
+        <button mat-raised-button color="primary">Admin Details</button>
+    </a>
+    <a href="holidays" style="margin-left:22px;">
+        <button mat-raised-button color="primary">Holidays</button>
+    </a>
+    <a href="task" style="margin-left:22px;">
+        <button mat-raised-button color="primary">Task</button>
+    </a>
+    <a href="userTask" style="margin-left:22px;">
+        <button mat-raised-button color="primary">AssignTask</button>
+    </a>
+</div> -->

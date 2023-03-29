@@ -1,0 +1,37 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/normal" routerLinkActive="active">
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+
+            </a>
+            <a mat-list-item routerLink="/userAssignedTask" routerLinkActive="active">
+                <mat-icon>person_add</mat-icon>
+                <span>Assigned Task</span>
+            </a>
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+
+
+    <mat-toolbar color="primary" class="mat-elevation-z3">
+        <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>&nbsp;
+        </button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar>
+    <p
+        style="font-family:georgia,garamond,serif;font-size:26px;font-style:italic;text-align: center;color: blue;margin-top: 2%;">
+        Welcome {{user.user.username}}!!! You can view task details here.</p>
+
+    <div class="text-center">
+        <img src="assets/Home.png" style="object-fit: contain;margin-left:22%;" />
+    </div>
+
+    <!-- <router-outlet></router-outlet> -->
+</mat-sidenav-container>

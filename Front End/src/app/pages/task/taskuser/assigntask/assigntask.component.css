@@ -1,0 +1,13 @@
+.spacer {
+    flex: 1 1 auto;
+    color: aqua;
+  }
+
+  mat-card
+  {
+    box-shadow: 10px 10px 10px 10px rgba(24, 4, 1, 0.479);
+  }
+  .full-width
+  {
+    width: 70%;
+  }
